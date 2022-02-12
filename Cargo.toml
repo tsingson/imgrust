@@ -1,0 +1,21 @@
+[package]
+name = "imgrust"
+version = "0.1.0"
+authors = ["tsingson <tsingson@me.com>"]
+edition = "2018"
+
+[dependencies]
+tokio = { version = "1.12", features = ["macros", "fs", "rt-multi-thread"] }
+warp = "0.3"
+uuid = { version = "0.8", features = ["v4"] }
+futures = { version = "0.3", default-features = false }
+bytes = "1.0"
+
+[profile.dev]
+debug = 0
+
+[profile.test]
+debug = 0
+
+[profile.release]
+panic = 'abort'
